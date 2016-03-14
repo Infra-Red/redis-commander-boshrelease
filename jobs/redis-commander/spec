@@ -1,0 +1,14 @@
+---
+name: redis-commander
+
+templates:
+  ctl.erb: bin/ctl
+
+packages:
+  - redis-commander
+  - nodejs
+
+properties:
+  redis_server_port:
+    description: Port of Redis server
+    default: 6379

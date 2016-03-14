@@ -1,0 +1,8 @@
+---
+name: redis-commander
+
+dependencies:
+  - nodejs
+
+files:
+  - redis-commander-0.3.2.tar.gz

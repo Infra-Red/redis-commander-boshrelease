@@ -1,0 +1,35 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/redis-commander
+LOG_DIR=/var/vcap/sys/log/redis-commander
+PIDFILE=${RUN_DIR}/redis-commander.pid
+COMMANDER=/var/vcap/packages/redis-commander/bin/redis-commander.js
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo $$ >> $PIDFILE
+
+    cd /var/vcap/packages/nodejs
+
+    exec chpst -u vcap:vcap ./bin/node $COMMANDER \
+      >>  $LOG_DIR/redis-commander.stdout.log \
+      2>> $LOG_DIR/redis-commander.stderr.log
+
+    ;;
+
+  stop)
+
+    kill -9 `cat $PIDFILE`
+
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac
