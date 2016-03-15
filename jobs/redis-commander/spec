@@ -9,6 +9,23 @@ packages:
   - nodejs
 
 properties:
-  redis_server_port:
-    description: Port of Redis server
-    default: 6379
+  redis-commander.redis_server_port:
+    description: "The port to find redis on"
+  redis-commander.redis_server_host:
+    description: "The host to find redis on"
+  redis-commander.redis_server_socket:
+    description: "The unix-socket to find redis on"
+  redis-commander.redis_password:
+    description: "The redis password"
+  redis-commander.redis_db:
+    description: "The redis database"
+  redis-commander.redis_auth_username:
+    description: "The http authorisation username"
+  redis-commander.redis_auth_password:
+    description: "The http authorisation password"
+  redis-commander.server_port:
+    description: "The port to run the server on"
+    default: "8081"
+  redis-commander.server_address:
+    description: "The address to run the server on"
+    default: "0.0.0.0"
