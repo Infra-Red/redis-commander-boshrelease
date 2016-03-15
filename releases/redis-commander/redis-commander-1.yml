@@ -1,0 +1,26 @@
+---
+packages:
+- name: nodejs
+  version: d1534e6db9cdaa51c1636d1141b76af654a9c9b9
+  fingerprint: d1534e6db9cdaa51c1636d1141b76af654a9c9b9
+  sha1: 45c74e73f0835270125e37e44a3f1df8f9b6cb4b
+  dependencies: []
+- name: redis-commander
+  version: 6d5112e0baac50b067c8575df979d15bf18967fc
+  fingerprint: 6d5112e0baac50b067c8575df979d15bf18967fc
+  sha1: 02d6e098ddc5d6057426a78a2640268e120a8ebc
+  dependencies:
+  - nodejs
+jobs:
+- name: redis-commander
+  version: 81a3bafa9aa2590c81809f73eda06b9f2df0617b
+  fingerprint: 81a3bafa9aa2590c81809f73eda06b9f2df0617b
+  sha1: acc4faebd3b4866d7e527e7afa8227390fcf4ae7
+license:
+  version: 6f38d19ea1291a8885c50c3d1081b335af40b1fd
+  fingerprint: 6f38d19ea1291a8885c50c3d1081b335af40b1fd
+  sha1: 9e9234c64e578e08012b884cb924ec5f5d870a3e
+commit_hash: 36bdcd67
+uncommitted_changes: true
+name: redis-commander
+version: '1'
