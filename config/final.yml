@@ -1,6 +1,6 @@
 ---
-blobstore:
-  provider: local
-  options:
-    blobstore_path: /tmp/redis-commander-blobs
 final_name: redis-commander
+blobstore:
+  provider: s3
+  options:
+    bucket_name: redis-commander-boshrelease-blobs
