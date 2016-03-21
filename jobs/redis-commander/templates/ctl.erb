@@ -16,15 +16,15 @@ case $1 in
     cd /var/vcap/packages/nodejs
 
     exec chpst -u vcap:vcap ./bin/node $COMMANDER \
-      <% if p('redis-commander.redis_server_port') != '' %>--redis-port  <%= p('redis-commander.redis_server_port') %> \<% end %>
-      <% if p('redis-commander.redis_server_host') != '' %>--redis-host <%= p('redis-commander.redis_server_host') %> \<% end %>
-      <% if p('redis-commander.redis_server_socket') != '' %>--redis-socket <%= p('redis-commander.redis_server_socket') %> \<% end %>
-      <% if p('redis-commander.redis_password') != '' %>--redis-password <%= p('redis-commander.redis_password') %> \<% end %>
-      <% if p('redis-commander.redis_db') != '' %>--redis-db <%= p('redis-commander.redis_db') %> \<% end %>
-      <% if p('redis-commander.redis_auth_username') != '' %>--http-auth-username <%= p('redis-commander.redis_auth_username') %> \<% end %>
-      <% if p('redis-commander.redis_auth_password') != '' %>--http-auth-password <%= p('redis-commander.redis_auth_password') %> \<% end %>
-      <% if p('redis-commander.server_port') != '' %>--port <%= p('redis-commander.server_port') %> \<% end %>
-      <% if p('redis-commander.server_address') != '' %>--address <%= p('redis-commander.server_address') %> \<% end %>
+      <% if propreties.redis-commander.redis_server_port %>--redis-port  <%= propreties.redis-commander.redis_server_port %><% end %> \
+      <% if propreties.redis-commander.redis_server_host %>--redis-host <%= propreties.redis-commander.redis_server_host %><% end %> \
+      <% if propreties.redis-commander.redis_server_socket %>--redis-socket <%= propreties.redis-commander.redis_server_socket %><% end %> \
+      <% if propreties.redis-commander.redis_password %>--redis-password <%= propreties.redis-commander.redis_password %><% end %> \
+      <% if propreties.redis-commander.redis_db %>--redis-db <%= propreties.redis-commander.redis_db %><% end %> \
+      <% if propreties.redis-commander.redis_auth_username %>--http-auth-username <%= propreties.redis-commander.redis_auth_username %><% end %> \
+      <% if propreties.redis-commander.redis_auth_password %>--http-auth-password <%= propreties.redis-commander.redis_auth_password %><% end %> \
+      <% if propreties.redis-commander.server_port %>--port <%= propreties.redis-commander.server_port %><% end %> \
+      <% if propreties.redis-commander.server_address %>--address <%= propreties.redis-commander.server_address %><% end %> \
       >>  $LOG_DIR/redis-commander.stdout.log \
       2>> $LOG_DIR/redis-commander.stderr.log
 
